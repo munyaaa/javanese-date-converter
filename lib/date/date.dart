@@ -1,7 +1,6 @@
 import 'package:javanese_date_converter/date/day_calculation.dart';
 import 'package:meta/meta.dart';
 
-// day calculation is start from Saturday(0)..Friday(6)
 enum Day {
   SATURDAY,
   SUNDAY,
@@ -13,14 +12,21 @@ enum Day {
 }
 
 abstract class IDate {
+  /// Day of the week consists of Sunday..Saturday.
   Day get day;
+  /// Date that consists of 31, 30, 29, or 28 per month.
   int get date;
+  /// Month that consists of January..December
   int get month;
+  /// Period of 365 / 366 days
   int get year;
+  /// Period of 100 years
   int get century;
+  /// Two digits behind the year
   int get twoDigitYear;
 }
 
+/// This class is depends on Gregorian Calendar (AD)
 class Date extends IDate {
   int _date;
   int _month;
@@ -64,6 +70,7 @@ class Date extends IDate {
     }
   }
 
+  /// Leap year is happened in 4 years once
   bool _isLeapYear(int year) {
     if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
       return true;

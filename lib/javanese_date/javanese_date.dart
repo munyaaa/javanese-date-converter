@@ -4,11 +4,17 @@ import 'package:javanese_date_converter/javanese_date/wetonan.dart';
 import 'package:meta/meta.dart';
 
 abstract class IJavaneseDate {
+  /// Pasaran is five-day cycle consists of [Pon], [Wage], [Kliwon], [Legi], [Pahing].
   Pasaran get pasaran;
+  /// Dinapitu is seven-day wuku cycle corresponds to day names in Gregorian.
   String get dinapitu;
+  /// Combination of five-day pancawara cycle with the seven-day wuku week cycle.
+  /// It usually used for divinatory systems, celebrations, and 
+  /// rites of passage as birth or death.
   Wetonan get wetonan;
 }
 
+/// This class is depends on Javanese Calendar. Indonesia traditional calendar in Java island
 class JavaneseDate extends Date implements IJavaneseDate {
   JavaneseDate({
     @required int date,

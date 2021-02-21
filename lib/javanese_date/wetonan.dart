@@ -56,7 +56,6 @@ class Wetonan {
     }
   }
 
-  // dinapitu + pasaran
   String get weton {
     return "${javaneseDate.dinapitu} ${javaneseDate.pasaran.toString()}";
   }
