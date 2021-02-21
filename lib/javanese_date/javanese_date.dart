@@ -17,31 +17,31 @@ abstract class IJavaneseDate {
 /// This class is depends on Javanese Calendar. Indonesia traditional calendar in Java island
 class JavaneseDate extends Date implements IJavaneseDate {
   JavaneseDate({
-    @required int date,
+    @required int day,
     @required int month,
     @required int year,
   }): super(
-    date: date,
+    day: day,
     month: month,
     year: year,
   );
 
   @override
   String get dinapitu {
-    switch (this.day) {
-      case Day.SATURDAY:
+    switch (this.weekday) {
+      case WeekDay.SATURDAY:
         return "S${String.fromCharCode(234)}tu";
-      case Day.SUNDAY:
+      case WeekDay.SUNDAY:
         return "Ngahad";
-      case Day.MONDAY:
+      case WeekDay.MONDAY:
         return "S${String.fromCharCode(234)}n${String.fromCharCode(232)}n";
-      case Day.TUESDAY:
+      case WeekDay.TUESDAY:
         return "Selasa";
-      case Day.WEDNESDAY:
+      case WeekDay.WEDNESDAY:
         return "R${String.fromCharCode(234)}bo";
-      case Day.THURSDAY:
+      case WeekDay.THURSDAY:
         return "K${String.fromCharCode(234)}mis";
-      case Day.FRIDAY:
+      case WeekDay.FRIDAY:
         return "Jemuwah";
       default:
         throw Exception("Error: Invalid date");

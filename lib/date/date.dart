@@ -1,7 +1,7 @@
 import 'package:javanese_date_converter/date/day_calculation.dart';
 import 'package:meta/meta.dart';
 
-enum Day {
+enum WeekDay {
   SATURDAY,
   SUNDAY,
   MONDAY,
@@ -13,9 +13,9 @@ enum Day {
 
 abstract class IDate {
   /// Day of the week consists of Sunday..Saturday.
-  Day get day;
+  WeekDay get weekday;
   /// Date that consists of 31, 30, 29, or 28 per month.
-  int get date;
+  int get day;
   /// Month that consists of January..December
   int get month;
   /// Period of 365 / 366 days
@@ -28,39 +28,45 @@ abstract class IDate {
 
 /// This class is depends on Gregorian Calendar (AD)
 class Date extends IDate {
-  int _date;
+  int _day;
   int _month;
   int _year;
 
   Date({
-    @required int date,
+    @required int day,
     @required int month,
     @required int year,
-  })  : assert(date != null && date >= 1 && date <= 31, "Error: Not a valid date"),
+  })  : assert(day != null && day >= 1 && day <= 31, "Error: Not a valid date"),
         assert(month != null && month >= 1 && month <= 12, "Error: Not a valid month"),
         assert(year != null && year.toString().length == 4, "Error: Not a valid year"),
         this._month = month,
         this._year = year {
-    if (_isDateValid(date, month, year)) {
-      this._date = date;
+    if (_isDateValid(day, month, year)) {
+      this._day = day;
     } else {
       throw Exception("Error: Not a valid date");
     }
   }
 
-  bool _isDateValid(int date, int month, int year) {
+  Date.fromDateTime(DateTime dateTime) {
+    this._day = dateTime.day;
+    this._month = dateTime.month;
+    this._year = dateTime.year;
+  }
+
+  bool _isDateValid(int day, int month, int year) {
     // first condition should be fulfill
-    if (date >= 1 && date <= 31) {
+    if (day >= 1 && day <= 31) {
       if (month == 2) {
         if (_isLeapYear(year) == true) {
-          return date <= 29 ? true : false;
+          return day <= 29 ? true : false;
         } else {
           // not a leap year, so date <= 28
-          return date <= 28 ? true : false;
+          return day <= 28 ? true : false;
         }
       } else if (month == 4 || month == 6 || month == 9 || month == 11) {
         // in April, June, September, November, date <= 30
-        return date <= 30 ? true : false;
+        return day <= 30 ? true : false;
       } else {
         // date <= 31
         return true;
@@ -80,23 +86,23 @@ class Date extends IDate {
   }
 
   @override
-  Day get day {
+  WeekDay get weekday {
     int dayValue = DayCalculation.calculateDay(this);
     switch (dayValue) {
       case 0:
-        return Day.SATURDAY;
+        return WeekDay.SATURDAY;
       case 1:
-        return Day.SUNDAY;
+        return WeekDay.SUNDAY;
       case 2:
-        return Day.MONDAY;
+        return WeekDay.MONDAY;
       case 3:
-        return Day.TUESDAY;
+        return WeekDay.TUESDAY;
       case 4:
-        return Day.WEDNESDAY;
+        return WeekDay.WEDNESDAY;
       case 5:
-        return Day.THURSDAY;
+        return WeekDay.THURSDAY;
       case 6:
-        return Day.FRIDAY;
+        return WeekDay.FRIDAY;
       default:
         throw Exception("Error: Incorrect day value, should be 0..6");
         break;
@@ -104,7 +110,7 @@ class Date extends IDate {
   }
 
   @override
-  int get date => this._date;
+  int get day => this._day;
 
   @override
   int get month => this._month;

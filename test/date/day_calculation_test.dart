@@ -9,8 +9,8 @@ void main() {
       expect(DayCalculation.calculateCentury(2000), 20);
     });
     test('Should return correct day value', () {
-      expect(DayCalculation.calculateDay(Date(date: 21, month: 4, year: 1879)), 2);
-      expect(DayCalculation.calculateDay(Date(date: 17, month: 9, year: 1904)), 0);
+      expect(DayCalculation.calculateDay(Date(day: 21, month: 4, year: 1879)), 2);
+      expect(DayCalculation.calculateDay(Date(day: 17, month: 9, year: 1904)), 0);
     });
     test('Should return last two digit of year', () {
       expect(DayCalculation.calculateTwoDigitYear(1999, 19), 99);

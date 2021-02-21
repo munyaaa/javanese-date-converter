@@ -19,18 +19,18 @@ class Wetonan {
   }
 
   int get dayNeptu {
-    switch (this.javaneseDate.day) {
-      case Day.FRIDAY:
+    switch (this.javaneseDate.weekday) {
+      case WeekDay.FRIDAY:
         return 6;
-      case Day.SATURDAY:
+      case WeekDay.SATURDAY:
         return 9;
-      case Day.MONDAY:
+      case WeekDay.MONDAY:
         return 4;
-      case Day.TUESDAY:
+      case WeekDay.TUESDAY:
         return 3;
-      case Day.WEDNESDAY:
+      case WeekDay.WEDNESDAY:
         return 7;
-      case Day.THURSDAY:
+      case WeekDay.THURSDAY:
         return 8;
       default:
         throw Exception("Error: Invalid Day");

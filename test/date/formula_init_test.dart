@@ -4,7 +4,7 @@ import 'package:javanese_date_converter/date/formula_init.dart';
 
 void main() {
   group('Should return correct formula variable', () {
-    FormulaInit fx = FormulaInit(Date(date: 21, month: 4, year: 1879));
+    FormulaInit fx = FormulaInit(Date(day: 21, month: 4, year: 1879));
     test('Should return correct k', () {
       expect(fx.k, 21);
     });
