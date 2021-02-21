@@ -1,3 +1,4 @@
+import 'package:javanese_date_converter/date/day_calculation.dart';
 import 'package:meta/meta.dart';
 
 // day calculation is start from Saturday(0)..Friday(6)
@@ -16,6 +17,8 @@ abstract class IDate {
   int get date;
   int get month;
   int get year;
+  int get century;
+  int get twoDigitYear;
 }
 
 class Date extends IDate {
@@ -27,10 +30,9 @@ class Date extends IDate {
     @required int date,
     @required int month,
     @required int year,
-  })  : assert(date >= 1 && date <= 31, "Error: Not a valid date"),
-        assert(month >= 1 && month <= 12, "Error: Not a valid month"),
-        assert(year.toString().length == 4, "Error: Not a valid year"),
-        // this._date = date,
+  })  : assert(date != null && date >= 1 && date <= 31, "Error: Not a valid date"),
+        assert(month != null && month >= 1 && month <= 12, "Error: Not a valid month"),
+        assert(year != null && year.toString().length == 4, "Error: Not a valid year"),
         this._month = month,
         this._year = year {
     if (_isDateValid(date, month, year)) {
@@ -72,7 +74,7 @@ class Date extends IDate {
 
   @override
   Day get day {
-    int dayValue = _calculateDay();
+    int dayValue = DayCalculation.calculateDay(this);
     switch (dayValue) {
       case 0:
         return Day.SATURDAY;
@@ -94,24 +96,6 @@ class Date extends IDate {
     }
   }
 
-  int _calculateDay() {
-    final int century = _calculateCentury(this._year);
-    final int twoDigitYear = _calculateTwoDigitYear(this._year, century);
-
-    int x = (13 * (this._month + 1)) ~/ 5;
-    int c = century ~/ 4;
-    int y = twoDigitYear ~/ 4;
-    int d = 2 * century;
-
-    print("(${this._date} + $x + $twoDigitYear + $y + $c - $d) % 7");
-
-    return (this._date + x + twoDigitYear + y + c - d) % 7;
-  }
-
-  int _calculateCentury(int year) => year ~/ 100;
-
-  int _calculateTwoDigitYear(int year, int century) => year - (century * 100);
-
   @override
   int get date => this._date;
 
@@ -120,4 +104,10 @@ class Date extends IDate {
 
   @override
   int get year => this._year;
+
+  @override
+  int get century => DayCalculation.calculateCentury(this._year);
+
+  @override
+  int get twoDigitYear => DayCalculation.calculateTwoDigitYear(this._year, this.century);
 }
