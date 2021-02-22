@@ -3,6 +3,7 @@ import 'package:javanese_date_converter/javanese_date/javanese_date.dart';
 import 'package:javanese_date_converter/javanese_date/pasaran.dart';
 
 abstract class IWetonan {
+  /// Value that counted from pasaran and day (weton)
   int get neptu;
   int get dayNeptu;
   int get pasaranNeptu;
