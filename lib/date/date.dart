@@ -1,5 +1,4 @@
 import 'package:javanese_date_converter/date/day_calculation.dart';
-import 'package:meta/meta.dart';
 
 enum WeekDay {
   SATURDAY,
@@ -33,9 +32,9 @@ class Date extends IDate {
   int _year;
 
   Date({
-    @required int day,
-    @required int month,
-    @required int year,
+    int day,
+    int month,
+    int year,
   })  : assert(day != null && day >= 1 && day <= 31, "Error: Not a valid date"),
         assert(month != null && month >= 1 && month <= 12, "Error: Not a valid month"),
         assert(year != null && year.toString().length == 4, "Error: Not a valid year"),

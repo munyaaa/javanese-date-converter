@@ -1,7 +1,6 @@
 import 'package:javanese_date_converter/date/date.dart';
 import 'package:javanese_date_converter/javanese_date/pasaran.dart';
 import 'package:javanese_date_converter/javanese_date/wetonan.dart';
-import 'package:meta/meta.dart';
 
 abstract class IJavaneseDate {
   /// Pasaran is five-day cycle consists of [Pon], [Wage], [Kliwon], [Legi], [Pahing].
@@ -17,9 +16,9 @@ abstract class IJavaneseDate {
 /// This class is depends on Javanese Calendar. Indonesia traditional calendar in Java island
 class JavaneseDate extends Date implements IJavaneseDate {
   JavaneseDate({
-    @required int day,
-    @required int month,
-    @required int year,
+    int day,
+    int month,
+    int year,
   }): super(
     day: day,
     month: month,
