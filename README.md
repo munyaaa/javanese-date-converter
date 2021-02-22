@@ -3,7 +3,7 @@
 A plugin to convert general calendar (*Gregorian* Calendar) to *Javanese* Calendar for Dart.
 
 ## Overview
-Indonesia is a country that has a variety of cultures and beliefs.  Not only those, they also has their own local calendar.  One of them come from Javanese ethnic, **Javenese Calendar**.  It began to used in Java island since 1625 when Mataram Kingdom was led by Sultan Agung.  Generally, the usage is as a basic to count good or bad days, divinatory systems, celebrations, and rites of passage as birth or death.
+Indonesia is a country that has a variety of cultures and beliefs.  Not only those, they also has their own local calendar.  One of them come from Javanese ethnic, **Javanese Calendar**.  It began to used in Java island since 1625 when Mataram Kingdom was led by Sultan Agung.  Generally, the usage is as a basic to count good or bad days, divinatory systems, celebrations, and rites of passage as birth or death.
 
 ##  Getting Started
 ### Dependency
