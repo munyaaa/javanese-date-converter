@@ -26,6 +26,12 @@ class JavaneseDate extends Date implements IJavaneseDate {
     year: year,
   );
 
+  JavaneseDate.fromDateTime(
+    DateTime dateTime
+  ): super.fromDateTime(
+    dateTime,
+  );
+
   @override
   String get dinapitu {
     switch (this.weekday) {

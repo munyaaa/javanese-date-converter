@@ -9,6 +9,12 @@ void main() {
       expect(javaneseDate.month, 1);
       expect(javaneseDate.year, 1998);
     });
+    test('Should can input the right object props from date time', () {
+      JavaneseDate javaneseDate = JavaneseDate.fromDateTime(DateTime(1998, 1, 31));
+      expect(javaneseDate.day, 31);
+      expect(javaneseDate.month, 1);
+      expect(javaneseDate.year, 1998);
+    });
     test('Should return exception', () {
       expect(() {
         JavaneseDate _ = JavaneseDate(day: null, month: 2, year: 1998);

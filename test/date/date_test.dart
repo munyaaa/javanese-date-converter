@@ -9,6 +9,12 @@ void main() {
       expect(dateInstance.month, 2);
       expect(dateInstance.year, 2020);
     });
+    test('Data from DateTime should be equal to input', () {
+      Date dateInstance = Date.fromDateTime(DateTime(2020, 2, 29));
+      expect(dateInstance.day, 29);
+      expect(dateInstance.month, 2);
+      expect(dateInstance.year, 2020);
+    });
     test('Date should be error if not in a valid date', () {
       expect(() {
         Date _ = Date(day: 30, month: 2, year: 1998);
