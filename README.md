@@ -17,7 +17,7 @@ dependencies:
 ### Import
 Import `javanese_date_converter` to you Dart file
 ```dart
-  import 'package:javanese_date_converter/javanese_date_converter';
+import 'package:javanese_date_converter/javanese_date_converter';
 ```
 
 ## How to Use
