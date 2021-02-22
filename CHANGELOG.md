@@ -1,3 +1,6 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* The initial release feature:
+ - Get *pasaran*
+ - Get *wotonan*
+ - Convert day to *dinapitu*
