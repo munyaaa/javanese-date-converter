@@ -1,10 +1,10 @@
 name: javanese_date_converter
 description: A plugin to convert general calendar (Gregorian Calendar) to Javanese Calendar for Dart.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/munyaaa/javanese-date-converter
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
   flutter: ">=1.20.0"
 
 dependencies:
