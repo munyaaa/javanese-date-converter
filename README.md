@@ -47,4 +47,4 @@ int neptu = javaneseDate.wetonan.neptu;
 ```
 
 ## Reference
-[Karjanto, N. and F. Beauducel. “An ethnoarithmetic excursion into the Javanese calendar.” (2020).](http://https://arxiv.org/pdf/2012.10064.pdf "An ethnoarithmetic excursion into the Javanese calendar")
+[Karjanto, N. and F. Beauducel. “An ethnoarithmetic excursion into the Javanese calendar.” (2020).](https://arxiv.org/pdf/2012.10064.pdf "An ethnoarithmetic excursion into the Javanese calendar")
