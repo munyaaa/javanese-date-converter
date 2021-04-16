@@ -11,7 +11,7 @@ enum PasaranType {
 
 abstract class IPasaran {
   PasaranType get pasaranType;
-  String toString();
+  String get pasaran;
 }
 
 class Pasaran implements IPasaran {
@@ -45,7 +45,7 @@ class Pasaran implements IPasaran {
   }
 
   @override
-  String toString() {
+  String get pasaran {
     switch (this.pasaranType) {
       case PasaranType.PON:
         return "Pon";
