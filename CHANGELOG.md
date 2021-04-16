@@ -8,3 +8,8 @@
 * The initial release feature:
  - Add CHANGELOG.md
  - Modify SDK environment
+
+## 0.0.3
+* The initial release feature:
+ - Fix README.md
+ - Get *associated symbols* in *pasaran*
