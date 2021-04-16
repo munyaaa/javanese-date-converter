@@ -81,7 +81,7 @@ class Pasaran implements IPasaran {
           color: "yellow",
           direction: "west",
           posture: "sleep",
-        ).toJson();
+        ).toMap();
       case PasaranType.WAGE:
         return AssociatedSymbols(
           krama: "Cemeng",
@@ -90,7 +90,7 @@ class Pasaran implements IPasaran {
           color: "black",
           direction: "north",
           posture: "sit down",
-        ).toJson();
+        ).toMap();
       case PasaranType.KLIWON:
         return AssociatedSymbols(
           krama: "Asih",
@@ -99,7 +99,7 @@ class Pasaran implements IPasaran {
           color: "mixed color",
           direction: "center",
           posture: "stand up",
-        ).toJson();
+        ).toMap();
       case PasaranType.LEGI:
         return AssociatedSymbols(
           krama: "Manis",
@@ -108,7 +108,7 @@ class Pasaran implements IPasaran {
           color: "white",
           direction: "east",
           posture: "turn back",
-        ).toJson();
+        ).toMap();
       case PasaranType.PAHING:
         return AssociatedSymbols(
           krama: "Pahit",
@@ -117,7 +117,7 @@ class Pasaran implements IPasaran {
           color: "red",
           direction: "south",
           posture: "to face",
-        ).toJson();
+        ).toMap();
       default:
         throw Exception("Error: Incorrect pasaran");
         break;
@@ -126,7 +126,7 @@ class Pasaran implements IPasaran {
 }
 
 abstract class IAssociatedSymbols {
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toMap();
 }
 
 class AssociatedSymbols implements IAssociatedSymbols {
@@ -147,7 +147,7 @@ class AssociatedSymbols implements IAssociatedSymbols {
   });
 
   @override
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return {
       "krama": this.krama ?? "",
       "meaning": this.meaning ?? "",
