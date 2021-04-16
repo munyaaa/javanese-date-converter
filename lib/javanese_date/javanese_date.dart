@@ -3,7 +3,8 @@ import 'package:javanese_date_converter/javanese_date/pasaran.dart';
 import 'package:javanese_date_converter/javanese_date/wetonan.dart';
 
 abstract class IJavaneseDate {
-  /// Pasaran is five-day cycle consists of [Pon], [Wage], [Kliwon], [Legi], [Pahing].
+  /// Pancawara is five-day cycle known as Pasaran that
+  /// consists of [Pon], [Wage], [Kliwon], [Legi], [Pahing].
   Pasaran get pasaran;
   /// Dinapitu is seven-day wuku cycle corresponds to day names in Gregorian.
   String get dinapitu;
