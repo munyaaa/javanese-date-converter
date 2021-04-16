@@ -37,7 +37,7 @@ String dinapitu = javaneseDate.dinapitu;
 ##### Pasaran
 Pasaran is five-day cycle consists of *Pon*, *Wage*, *Kliwon*, *Lêgi*, *Pahing*.
 ```dart
-String pasaran = javaneseDate.pasaran.toString();
+String pasaran = javaneseDate.pasaran;
 ```
 ##### Wetonan
 Wetonan is the combination of five-day *pancawara* cycle with the seven-day *wuku* week cycle.
