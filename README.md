@@ -10,7 +10,7 @@ Indonesia is a country that has a variety of cultures and beliefs.  Not only tho
 Add `javanese_date_converter` package as dependency in `pubspec.yaml`
 ```yaml
 dependencies:
-  javanese_date_converter: ^0.0.1
+  javanese_date_converter: <latest version>
 ```
 ### Import
 Import `javanese_date_converter` to you Dart file
@@ -35,9 +35,10 @@ It consists of *Sênèn*, *Selasa*, *Rêbo*, *Kêmis*, *Jemuwah*, *Sêtu*, and *
 String dinapitu = javaneseDate.dinapitu;
 ```
 ##### Pasaran
-Pasaran is five-day cycle consists of *Pon*, *Wage*, *Kliwon*, *Lêgi*, *Pahing*.
+Pancawara is five-day cycle known as Pasaran that consists of *Pon*, *Wage*, *Kliwon*, *Lêgi*, *Pahing*.
 ```dart
-String pasaran = javaneseDate.pasaran;
+Pasaran pasaran = javaneseDate.pasaran;
+Map<String, dynamic> associatedSymbols = pasaran.associatedSymbols;
 ```
 ##### Wetonan
 Wetonan is the combination of five-day *pancawara* cycle with the seven-day *wuku* week cycle.
